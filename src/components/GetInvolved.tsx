@@ -3,6 +3,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import { Heart, Sprout, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const GetInvolved: React.FC = () => {
   const [ref, inView] = useInView({
@@ -17,6 +18,7 @@ const GetInvolved: React.FC = () => {
       description: "Your contribution helps us plant more trees and recognize environmental champions.",
       buttonText: "Support Our Cause",
       buttonClass: "bg-leaf-500 hover:bg-leaf-600 text-white",
+      link: "/donate"
     },
     {
       icon: <Sprout className="h-6 w-6" />,
@@ -24,6 +26,7 @@ const GetInvolved: React.FC = () => {
       description: "Join a tree planting event near you or organize one in your community.",
       buttonText: "Find Opportunities",
       buttonClass: "bg-white border border-leaf-200 text-leaf-700 hover:bg-leaf-50",
+      link: "#"
     },
     {
       icon: <Users className="h-6 w-6" />,
@@ -31,6 +34,7 @@ const GetInvolved: React.FC = () => {
       description: "Lend your skills and time to help our organization grow and make a bigger impact.",
       buttonText: "Join Our Team",
       buttonClass: "bg-white border border-leaf-200 text-leaf-700 hover:bg-leaf-50",
+      link: "#"
     },
   ];
 
@@ -83,15 +87,15 @@ const GetInvolved: React.FC = () => {
                 {option.description}
               </p>
               
-              <a 
-                href="#" 
+              <Link 
+                to={option.link}
                 className={cn(
                   "block w-full py-3 rounded-md text-center transition-colors duration-200 font-medium",
                   option.buttonClass
                 )}
               >
                 {option.buttonText}
-              </a>
+              </Link>
             </div>
           ))}
         </div>
