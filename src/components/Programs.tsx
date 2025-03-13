@@ -2,7 +2,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
-import { ArrowUpRight, Tree, TreeDeciduous, TreePine } from 'lucide-react';
+import { ArrowUpRight, Trees, TreeDeciduous, TreePine } from 'lucide-react';
 
 const Programs: React.FC = () => {
   const [ref, inView] = useInView({
@@ -24,7 +24,7 @@ const Programs: React.FC = () => {
       image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=800",
     },
     {
-      icon: <Tree className="h-6 w-6" />,
+      icon: <Trees className="h-6 w-6" />,
       title: "Ecosystem Restoration",
       description: "We restore degraded lands and rebuild wildlife habitats through strategic tree planting and conservation efforts.",
       image: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=800",
