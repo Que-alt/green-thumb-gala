@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
     
     // Preload the hero image
     const img = new Image();
-    img.src = 'https://images.unsplash.com/photo-1469474968028-56623f02e42e';
+    img.src = 'https://images.unsplash.com/photo-1426604966848-d7adac402bff';
     img.onload = () => {
       document.getElementById('hero-image')?.classList.remove('opacity-0');
       document.getElementById('hero-image')?.classList.add('opacity-100');
@@ -24,35 +24,35 @@ const Hero: React.FC = () => {
         id="hero-image"
         className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-out opacity-0"
         style={{ 
-          backgroundImage: 'url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2000)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=2000)',
         }}
       ></div>
       
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-transparent"></div>
       
       {/* Content */}
       <div className="relative container h-full flex flex-col justify-center items-start px-4 md:px-8 pt-16">
         <div className="max-w-2xl">
           <div 
-            className={`inline-block px-4 py-1.5 mb-4 rounded-full bg-white/10 backdrop-blur-sm border border-white/20
-            text-sm font-medium transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`inline-block px-4 py-1.5 mb-4 rounded-full bg-leaf-500/10 backdrop-blur-sm border border-leaf-500/20
+            text-sm font-medium text-leaf-600 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            Plant Trees. Change Lives.
+            Planting Trees, Growing Future
           </div>
           
           <h1 
             className={`text-4xl sm:text-5xl md:text-6xl font-medium leading-tight text-white drop-shadow-sm
             tracking-tight transition-all duration-700 delay-100 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            Growing a greener<br /> future together
+            Let's make Earth<br />greener together
           </h1>
           
           <p 
             className={`mt-6 text-lg text-white/90 max-w-md leading-relaxed
             transition-all duration-700 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           >
-            Join our mission to restore forests worldwide and recognize those making a difference in environmental conservation.
+            Join our mission to restore forests worldwide and combat climate change through community-driven tree planting initiatives.
           </p>
           
           <div 
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
           >
             <a 
               href="#get-involved" 
-              className="px-6 py-3 bg-leaf-500 text-white rounded-full hover:bg-leaf-600 transition-colors duration-200 shadow-elegant flex items-center justify-center sm:justify-start"
+              className="px-6 py-3 bg-leaf-500 text-white rounded-md hover:bg-leaf-600 transition-colors duration-200 shadow-elegant flex items-center justify-center sm:justify-start"
             >
               Get Involved
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
             
             <a 
               href="#mission" 
-              className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-full
+              className="px-6 py-3 bg-white/10 backdrop-blur-sm text-white border border-white/20 rounded-md
               hover:bg-white/20 transition-colors duration-200 flex items-center justify-center sm:justify-start"
             >
               Learn More

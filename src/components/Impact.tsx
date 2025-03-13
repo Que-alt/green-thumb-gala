@@ -3,6 +3,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import AnimatedCounter from './common/AnimatedCounter';
+import { BarChart3 } from 'lucide-react';
 
 const Impact: React.FC = () => {
   const [ref, inView] = useInView({
@@ -18,9 +19,16 @@ const Impact: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-leaf-50 overflow-hidden" ref={ref}>
+    <section id="impact" className="py-20 bg-white overflow-hidden" ref={ref}>
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className={cn(
+            "inline-flex items-center justify-center w-12 h-12 rounded-full bg-leaf-100 text-leaf-500 mb-6 transition-all duration-500 ease-apple",
+            inView ? "opacity-100 scale-100" : "opacity-0 scale-90"
+          )}>
+            <BarChart3 className="h-6 w-6" />
+          </div>
+          
           <h2 className={cn(
             "text-3xl sm:text-4xl font-medium mb-4 transition-all duration-700 ease-apple",
             inView ? "opacity-100" : "opacity-0 translate-y-4"
@@ -42,14 +50,14 @@ const Impact: React.FC = () => {
             <div
               key={index}
               className={cn(
-                "text-center transition-all duration-700 ease-apple",
+                "bg-leaf-50 p-8 rounded-lg text-center transition-all duration-700 ease-apple",
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               )}
               style={{ 
                 transitionDelay: inView ? `${index * 100 + 200}ms` : '0ms',
               }}
             >
-              <div className="text-4xl sm:text-5xl font-medium text-leaf-900 mb-2">
+              <div className="text-4xl sm:text-5xl font-medium text-leaf-700 mb-2">
                 <AnimatedCounter 
                   end={stat.value} 
                   suffix={stat.suffix} 

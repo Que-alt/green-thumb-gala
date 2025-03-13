@@ -38,6 +38,13 @@ const GetInvolved: React.FC = () => {
     <section id="get-involved" className="section-padding bg-gradient-to-b from-white to-leaf-50" ref={ref}>
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className={cn(
+            "inline-flex items-center justify-center w-12 h-12 rounded-full bg-leaf-100 text-leaf-500 mb-6 transition-all duration-500 ease-apple",
+            inView ? "opacity-100 scale-100" : "opacity-0 scale-90"
+          )}>
+            <Sprout className="h-6 w-6" />
+          </div>
+          
           <h2 className={cn(
             "text-3xl sm:text-4xl font-medium mb-6 transition-all duration-700 ease-apple",
             inView ? "opacity-100" : "opacity-0 translate-y-4"
@@ -59,7 +66,7 @@ const GetInvolved: React.FC = () => {
             <div 
               key={index}
               className={cn(
-                "bg-white rounded-2xl p-8 shadow-elegant transition-all duration-700 ease-apple",
+                "bg-white rounded-lg p-8 shadow-sm transition-all duration-700 ease-apple hover:shadow-md",
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8" 
               )}
               style={{ 
@@ -79,7 +86,7 @@ const GetInvolved: React.FC = () => {
               <a 
                 href="#" 
                 className={cn(
-                  "block w-full py-3 rounded-lg text-center transition-colors duration-200 font-medium",
+                  "block w-full py-3 rounded-md text-center transition-colors duration-200 font-medium",
                   option.buttonClass
                 )}
               >

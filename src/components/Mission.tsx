@@ -32,6 +32,13 @@ const Mission: React.FC = () => {
     <section id="mission" className="section-padding bg-white" ref={ref}>
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className={cn(
+            "inline-flex items-center justify-center w-12 h-12 rounded-full bg-leaf-100 text-leaf-500 mb-6 transition-all duration-500 ease-apple",
+            inView ? "opacity-100 scale-100" : "opacity-0 scale-90"
+          )}>
+            <Leaf className="h-6 w-6" />
+          </div>
+          
           <h2 className={cn(
             "text-3xl sm:text-4xl font-medium mb-6 transition-all duration-700 ease-apple",
             inView ? "opacity-100" : "opacity-0 translate-y-4"
@@ -43,7 +50,7 @@ const Mission: React.FC = () => {
             "text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-100 ease-apple",
             inView ? "opacity-100" : "opacity-0 translate-y-4"
           )}>
-            GreenAward is dedicated to combating deforestation and climate change through tree planting initiatives 
+            TreeGrowth is dedicated to combating deforestation and climate change through tree planting initiatives 
             and recognizing environmental champions who protect our planet's precious resources.
           </p>
         </div>
@@ -53,9 +60,8 @@ const Mission: React.FC = () => {
             <div 
               key={index}
               className={cn(
-                "glass-card p-8 rounded-2xl transition-all duration-700 ease-apple",
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8",
-                inView ? `delay-[${index * 100 + 200}ms]` : "delay-0"
+                "bg-white p-8 rounded-lg border border-border shadow-sm transition-all duration-700 ease-apple hover:shadow-md hover:border-leaf-200",
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               )}
               style={{ 
                 transitionDelay: inView ? `${index * 100 + 200}ms` : '0ms',

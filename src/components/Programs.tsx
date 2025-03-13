@@ -32,9 +32,16 @@ const Programs: React.FC = () => {
   ];
 
   return (
-    <section id="programs" className="section-padding" ref={ref}>
+    <section id="programs" className="section-padding bg-leaf-50" ref={ref}>
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-16">
+          <div className={cn(
+            "inline-flex items-center justify-center w-12 h-12 rounded-full bg-leaf-100 text-leaf-500 mb-6 transition-all duration-500 ease-apple",
+            inView ? "opacity-100 scale-100" : "opacity-0 scale-90"
+          )}>
+            <TreePine className="h-6 w-6" />
+          </div>
+          
           <h2 className={cn(
             "text-3xl sm:text-4xl font-medium mb-6 transition-all duration-700 ease-apple",
             inView ? "opacity-100" : "opacity-0 translate-y-4"
@@ -55,7 +62,7 @@ const Programs: React.FC = () => {
             <div 
               key={index}
               className={cn(
-                "bg-white rounded-2xl shadow-soft overflow-hidden transition-all duration-700 ease-apple group",
+                "bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-700 ease-apple group hover:shadow-md",
                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8" 
               )}
               style={{ 

@@ -35,8 +35,8 @@ const Index = () => {
       <Navbar />
       <Hero />
       <Mission />
-      <Impact />
       <Programs />
+      <Impact />
       <Awards />
       <GetInvolved />
       <Footer />
