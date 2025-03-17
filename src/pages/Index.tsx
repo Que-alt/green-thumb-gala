@@ -6,7 +6,6 @@ import Mission from '../components/Mission';
 import Programs from '../components/Programs';
 import Awards from '../components/Awards';
 import Impact from '../components/Impact';
-import GetInvolved from '../components/GetInvolved';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -38,7 +37,6 @@ const Index = () => {
       <Programs />
       <Impact />
       <Awards />
-      <GetInvolved />
       <Footer />
     </div>
   );
