@@ -2,8 +2,19 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
-import { Award, Trees, Leaf, User, Users, FileText } from 'lucide-react';
+import { Award, Trees, Leaf, User, Users, FileText, Video, Image } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from '@/components/ui/carousel';
+import {
+  Card,
+  CardContent
+} from '@/components/ui/card';
 
 const AwardsContent = () => {
   const [ref, inView] = useInView({
@@ -53,6 +64,144 @@ const AwardsContent = () => {
           <p className="text-xl text-white/90 max-w-2xl mx-auto">
             Celebrating the champions who are growing a greener future for Africa
           </p>
+        </div>
+      </section>
+
+      {/* Photo Gallery Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-4 mb-10">
+              <Image className="h-8 w-8 text-leaf-500" />
+              <h2 className="text-3xl font-bold text-gray-800">Award Moments</h2>
+            </div>
+            
+            <Carousel className="w-full max-w-4xl mx-auto">
+              <CarouselContent>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-video items-center justify-center p-0">
+                        <img 
+                          src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
+                          alt="Tree planting ceremony" 
+                          className="w-full h-full object-cover rounded-md"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-video items-center justify-center p-0">
+                        <img 
+                          src="https://images.unsplash.com/photo-1615796153287-98f3dfb15678?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
+                          alt="Award winners" 
+                          className="w-full h-full object-cover rounded-md"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+                <CarouselItem>
+                  <div className="p-1">
+                    <Card>
+                      <CardContent className="flex aspect-video items-center justify-center p-0">
+                        <img 
+                          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" 
+                          alt="Beautiful forest" 
+                          className="w-full h-full object-cover rounded-md"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+            
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="overflow-hidden rounded-lg shadow-sm h-64">
+                <img 
+                  src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                  alt="Community tree planting" 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-sm h-64">
+                <img 
+                  src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                  alt="Forest canopy" 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg shadow-sm h-64 md:col-span-2 lg:col-span-1">
+                <img 
+                  src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                  alt="Tree seedlings" 
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center space-x-4 mb-10">
+              <Video className="h-8 w-8 text-leaf-500" />
+              <h2 className="text-3xl font-bold text-gray-800">Featured Videos</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="aspect-video rounded-lg overflow-hidden shadow-md">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/MN0P-jJp3Hg" 
+                  title="The Importance of Trees" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+              
+              <div className="aspect-video rounded-lg overflow-hidden shadow-md">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/aICaAEXDJQQ" 
+                  title="AFR100: Growing Africa's Prosperity" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+            
+            <div className="mt-12 p-6 bg-gray-50 rounded-lg shadow-sm">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Award Highlights</h3>
+              <div className="aspect-video w-full rounded-lg overflow-hidden shadow-md">
+                <iframe 
+                  width="100%" 
+                  height="100%" 
+                  src="https://www.youtube.com/embed/OVQchUdpzrw" 
+                  title="Kenya's Reforestation Initiative" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <p className="mt-4 text-gray-700">
+                Watch our documentary featuring previous award winners and their incredible journeys to restore Africa's forests.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
