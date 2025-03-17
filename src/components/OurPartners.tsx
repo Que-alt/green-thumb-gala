@@ -3,14 +3,6 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
 import { Handshake } from 'lucide-react';
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const OurPartners: React.FC = () => {
   const [ref, inView] = useInView({
@@ -19,12 +11,30 @@ const OurPartners: React.FC = () => {
   });
 
   const partners = [
-    { name: "Kenya Forest Service", logo: "/partners/kfs-logo.svg" },
-    { name: "Green Belt Movement", logo: "/partners/green-belt-logo.svg" },
-    { name: "UNEP", logo: "/partners/unep-logo.svg" },
-    { name: "World Wildlife Fund", logo: "/partners/wwf-logo.svg" },
-    { name: "Kenya Wildlife Service", logo: "/partners/kws-logo.svg" },
-    { name: "The Nature Conservancy", logo: "/partners/tnc-logo.svg" },
+    {
+      name: "Kenya Forest Service",
+      logo: "/partners/kenya-forest-service.png"
+    },
+    {
+      name: "Ministry of Environment",
+      logo: "/partners/ministry-environment.png"
+    },
+    {
+      name: "World Wildlife Fund",
+      logo: "/partners/wwf-logo.png"
+    },
+    {
+      name: "Green Belt Movement",
+      logo: "/partners/green-belt-movement.png"
+    },
+    {
+      name: "United Nations Environment Programme",
+      logo: "/partners/unep-logo.png"
+    },
+    {
+      name: "Nature Kenya",
+      logo: "/partners/nature-kenya.png"
+    }
   ];
 
   return (
@@ -49,45 +59,29 @@ const OurPartners: React.FC = () => {
             "text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto transition-all duration-700 delay-100 ease-apple",
             inView ? "opacity-100" : "opacity-0 translate-y-4"
           )}>
-            We collaborate with leading organizations to advance Kenya's reforestation goals
-            and recognize outstanding contributions to our green future.
+            Working together with leading organizations to make Kenya greener, one tree at a time.
           </p>
         </div>
         
-        <div className={cn(
-          "transition-all duration-1000 delay-300 ease-apple",
-          inView ? "opacity-100" : "opacity-0"
-        )}>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {partners.map((partner, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="p-4 h-full">
-                    <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4 h-full flex flex-col items-center justify-center hover:shadow-md transition-all duration-300">
-                      <div className="w-full h-24 relative mb-4">
-                        <AspectRatio ratio={3/2} className="bg-gray-50 rounded-md overflow-hidden">
-                          <img 
-                            src={partner.logo} 
-                            alt={`${partner.name} logo`} 
-                            className="object-contain w-full h-full p-2"
-                          />
-                        </AspectRatio>
-                      </div>
-                      <p className="text-center text-sm font-medium">{partner.name}</p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2 md:left-4" />
-            <CarouselNext className="right-2 md:right-4" />
-          </Carousel>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+          {partners.map((partner, index) => (
+            <div 
+              key={index}
+              className={cn(
+                "flex items-center justify-center transition-all duration-700 ease-apple p-4",
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+              style={{ 
+                transitionDelay: inView ? `${index * 100 + 200}ms` : '0ms',
+              }}
+            >
+              <img 
+                src={partner.logo} 
+                alt={partner.name} 
+                className="max-h-24 max-w-full grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
