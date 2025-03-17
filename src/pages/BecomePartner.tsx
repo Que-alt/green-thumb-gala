@@ -54,9 +54,16 @@ const BecomePartner = () => {
       <Navbar />
       
       <div className="flex-1 bg-slate-50">
-        {/* Hero Section */}
-        <div className="bg-leaf-500 py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        {/* Hero Section with Image */}
+        <div className="relative bg-leaf-500 py-20 px-4">
+          <div className="absolute inset-0 z-0 opacity-30">
+            <img 
+              src="/hero/forest-canopy.jpg" 
+              alt="Forest canopy" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="container mx-auto max-w-4xl text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Become Our Partner
             </h1>
