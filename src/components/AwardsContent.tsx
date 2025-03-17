@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { cn } from '@/lib/utils';
@@ -69,15 +70,6 @@ const AwardsContent = () => {
             <p className="text-gray-700 text-center">
               Watch our documentary featuring previous award winners and their incredible journeys to restore Africa's forests.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Nomination Form Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <NominationForm />
           </div>
         </div>
       </section>
@@ -281,6 +273,15 @@ const AwardsContent = () => {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Nomination Form Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <NominationForm />
           </div>
         </div>
       </section>
