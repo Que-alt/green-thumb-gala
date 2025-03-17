@@ -16,37 +16,43 @@ const MeetTheTeam: React.FC = () => {
       name: "Sarah Nyawira",
       role: "Executive Director",
       bio: "Leading the ACT Awards with a passion for conservation and community engagement.",
-      initials: "SN"
+      initials: "SN",
+      photo: "/team/team-member-1.jpg"
     },
     {
       name: "James Omondi",
       role: "Program Manager",
       bio: "Overseeing the awards program and ensuring recognition for Kenya's tree champions.",
-      initials: "JO"
+      initials: "JO",
+      photo: "/team/team-member-2.jpg" 
     },
     {
       name: "Lucy Wairimu",
       role: "Community Outreach",
       bio: "Connecting with grassroots organizations and building partnerships across Kenya.",
-      initials: "LW"
+      initials: "LW",
+      photo: "/team/team-member-3.jpg"
     },
     {
       name: "Daniel Kipchoge",
       role: "Environmental Specialist",
       bio: "Bringing technical expertise to evaluate the impact of reforestation efforts.",
-      initials: "DK"
+      initials: "DK",
+      photo: "/team/team-member-4.jpg"
     },
     {
       name: "Grace Mwangi",
       role: "Communications Lead",
       bio: "Sharing stories of tree champions and raising awareness for the ACT Awards.",
-      initials: "GM"
+      initials: "GM",
+      photo: "/team/team-member-5.jpg"
     },
     {
       name: "Peter Kamau",
       role: "Operations Manager",
       bio: "Ensuring the smooth execution of all ACT Awards activities and events.",
-      initials: "PK"
+      initials: "PK",
+      photo: "/team/team-member-6.jpg"
     }
   ];
 
@@ -97,6 +103,7 @@ const MeetTheTeam: React.FC = () => {
             >
               <div className="flex items-center space-x-4 mb-4">
                 <Avatar className={cn("h-14 w-14", avatarColors[index % avatarColors.length])}>
+                  <AvatarImage src={person.photo} alt={person.name} />
                   <AvatarFallback>{person.initials}</AvatarFallback>
                 </Avatar>
                 <div>

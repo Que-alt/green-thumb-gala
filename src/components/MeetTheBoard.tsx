@@ -16,25 +16,29 @@ const MeetTheBoard: React.FC = () => {
       name: "Prof. Wangari Maathai",
       role: "Chairperson",
       bio: "Distinguished environmental activist and Nobel Peace Prize laureate with decades of experience in conservation.",
-      initials: "WM"
+      initials: "WM",
+      photo: "/board/board-member-1.jpg"
     },
     {
       name: "Dr. John Kimani",
       role: "Vice Chairperson",
       bio: "Leading environmental scientist specializing in forest ecology and sustainable landscape management.",
-      initials: "JK"
+      initials: "JK",
+      photo: "/board/board-member-2.jpg"
     },
     {
       name: "Hon. Elizabeth Wathuti",
       role: "Board Member",
       bio: "Prominent climate activist and founder of the Green Generation Initiative driving youth engagement.",
-      initials: "EW"
+      initials: "EW",
+      photo: "/board/board-member-3.jpg"
     },
     {
       name: "Mr. Robert Nganga",
       role: "Board Member",
       bio: "Seasoned business leader bringing corporate governance expertise to environmental initiatives.",
-      initials: "RN"
+      initials: "RN",
+      photo: "/board/board-member-4.jpg"
     }
   ];
 
@@ -84,6 +88,7 @@ const MeetTheBoard: React.FC = () => {
               }}
             >
               <Avatar className={cn("h-16 w-16", avatarColors[index % avatarColors.length])}>
+                <AvatarImage src={person.photo} alt={person.name} />
                 <AvatarFallback className="text-lg">{person.initials}</AvatarFallback>
               </Avatar>
               <div>
