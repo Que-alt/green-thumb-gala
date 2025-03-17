@@ -78,12 +78,6 @@ const WhatWeDo: React.FC = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="#" className="px-5 py-3 bg-leaf-500 text-white rounded-md hover:bg-leaf-600 transition-colors duration-200 shadow-sm">
-              Nominate a Tree Champion
-            </a>
-            <a href="#" className="px-5 py-3 bg-white border border-leaf-200 text-leaf-700 rounded-md hover:bg-leaf-50 transition-colors duration-200">
-              Get Involved
-            </a>
             <a href="#" className="px-5 py-3 bg-white border border-leaf-200 text-leaf-700 rounded-md hover:bg-leaf-50 transition-colors duration-200">
               Learn More about ACT Awards
             </a>
