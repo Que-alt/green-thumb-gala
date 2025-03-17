@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -205,7 +204,41 @@ export default {
 			transitionTimingFunction: {
 				'apple': 'cubic-bezier(0.645, 0.045, 0.355, 1.000)',
 			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '65ch',
+						color: 'inherit',
+						a: {
+							color: 'inherit',
+							textDecoration: 'none',
+							fontWeight: '500',
+						},
+						strong: {
+							color: 'inherit',
+						},
+						h1: {
+							color: 'inherit',
+						},
+						h2: {
+							color: 'inherit',
+						},
+						h3: {
+							color: 'inherit',
+						},
+						h4: {
+							color: 'inherit',
+						},
+						code: {
+							color: 'inherit',
+						},
+					},
+				},
+			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/typography")
+	],
 } satisfies Config;
